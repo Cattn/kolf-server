@@ -1,0 +1,19 @@
+{
+  "name": "kolf-23.08.4",
+  "version": "1.0.0",
+  "description": "Heya,",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "express": "^4.18.2"
+  }
+}
