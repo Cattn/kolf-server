@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const htmlServed = express();
 const PORT = 3010;
 const DiscordRPC = require('discord-rpc');
 const WebSocket = require('ws');
@@ -16,7 +17,15 @@ const httpServer = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+const htmlServer = htmlServed.listen(8080, () => {
+  console.log(`Server running on port 8080`);
+});
+
 const wss = new WebSocket.Server({ noServer: true });
+
+htmlServed.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
 
 app.post('/turn', (req, res) => {
   const receivedData = req.body;
